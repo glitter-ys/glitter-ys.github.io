@@ -1,6 +1,6 @@
 ---
 layout:     post   				    # 使用的布局（不需要改）
-title:      就业分享会				# 标题 
+title:      就业分享				# 标题 
 subtitle:   就业or读研？            #副标题
 date:       2024-06-13 				# 时间
 author:     YS 						# 作者
