@@ -30,6 +30,13 @@
         {% continue %}
       {% endif %}
 
+      {% if share.type == 'QRCode' %}
+        <button id="qrcode-btn" class="btn">
+          <i class="fa-fw {{ share.icon }}"></i>
+        </button>
+        {% continue %}
+      {% endif %}
+
       {% assign link = share.link | replace: 'TITLE', title | replace: 'URL', url %}
 
       <a href="{{ link }}" target="_blank" rel="noopener" {{ tooltip }}>
