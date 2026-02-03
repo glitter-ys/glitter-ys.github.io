@@ -31,7 +31,7 @@
       {% endif %}
 
       {% if share.type == 'QRCode' %}
-        <button id="qrcode-btn" class="btn">
+        <button id="qrcode-btn" class="btn" data-title="{{ title }}" data-lib="{{ '/assets/lib/qrcodejs/qrcode.min.js' | relative_url }}">
           <i class="fa-fw {{ share.icon }}"></i>
         </button>
         {% continue %}

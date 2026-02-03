@@ -487,10 +487,63 @@ header {
   }
 }
 
-h2,
-h3,
 h4 {
   @include bp.xl {
     scroll-margin-top: 2rem;
+  }
+}
+
+// QR Code Popup Styles
+.qrcode-container {
+  display: none;
+  position: absolute;
+  background-color: var(--card-bg);
+  padding: 1rem;
+  border: 1px solid var(--btn-border-color);
+  border-radius: 0.5rem;
+  box-shadow: var(--card-shadow);
+  z-index: 1000;
+  margin-top: 0.5rem;
+  text-align: center;
+  width: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  .qrcode-body {
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: center;
+    background-color: white; /* Ensure QR code has white background for visibility */
+    padding: 5px;
+    border-radius: 4px;
+    
+    img, canvas {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  .qrcode-title {
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    line-height: 1.2;
+    word-wrap: break-word; 
+  }
+
+  .qrcode-download {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+    color: var(--link-color);
+    border: 1px solid var(--link-color);
+    border-radius: 0.25rem;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: var(--link-color);
+      color: #fff;
+    }
   }
 }
