@@ -3,6 +3,111 @@
 @use '../abstracts/mixins' as mx;
 @use '../abstracts/placeholders';
 
+body.post-bg {
+  background-color: var(--main-bg);
+  background-image: var(--post-bg-image);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  color: #fff;
+  --bg-glass: rgb(0 0 0 / 45%);
+  --bg-glass-strong: rgb(0 0 0 / 55%);
+  --border-glass: rgb(255 255 255 / 12%);
+  --border-glass-strong: rgb(255 255 255 / 18%);
+  --hover-glass: rgb(255 255 255 / 10%);
+  --main-bg: var(--bg-glass);
+  --mask-bg: rgb(0 0 0 / 55%);
+  --main-border-color: var(--border-glass);
+  --button-bg: var(--bg-glass);
+  --btn-border-color: var(--border-glass-strong);
+  --btn-backtotop-border-color: var(--border-glass);
+  --sidebar-bg: var(--bg-glass);
+  --sidebar-border-color: var(--border-glass);
+  --sidebar-muted-color: rgb(255 255 255 / 85%);
+  --sidebar-active-color: #fff;
+  --sidebar-hover-bg: var(--hover-glass);
+  --sidebar-btn-bg: var(--bg-glass-strong);
+  --sidebar-btn-color: #fff;
+  --site-title-color: #fff;
+  --site-subtitle-color: rgb(255 255 255 / 85%);
+  --avatar-border-color: rgb(255 255 255 / 70%);
+  --topbar-bg: var(--bg-glass-strong);
+  --search-border-color: var(--border-glass);
+  --search-icon-color: rgb(255 255 255 / 70%);
+  --input-focus-border-color: rgb(255 255 255 / 35%);
+  --card-bg: var(--bg-glass);
+  --card-hover-bg: var(--hover-glass);
+  --card-shadow: rgb(0 0 0 / 60%) 0 8px 24px 0;
+  --highlight-bg-color: rgb(0 0 0 / 35%);
+  --inline-code-bg: rgb(255 255 255 / 12%);
+  --kbd-bg-color: rgb(0 0 0 / 55%);
+  --kbd-wrap-color: rgb(255 255 255 / 35%);
+  --tb-odd-bg: rgb(0 0 0 / 35%);
+  --tb-even-bg: rgb(0 0 0 / 25%);
+  --tb-border-color: var(--border-glass);
+  --prompt-tip-bg: rgb(0 0 0 / 45%);
+  --prompt-info-bg: rgb(0 0 0 / 45%);
+  --prompt-warning-bg: rgb(0 0 0 / 45%);
+  --prompt-danger-bg: rgb(0 0 0 / 45%);
+  --search-tag-bg: rgb(0 0 0 / 45%);
+  --tag-border: var(--border-glass);
+  --tag-hover: var(--hover-glass);
+  --text-color: #fff;
+  --text-muted-color: #fff;
+  --text-muted-highlight-color: #fff;
+  --heading-color: #fff;
+  --label-color: #fff;
+  --blockquote-text-color: #fff;
+  --prompt-text-color: #fff;
+  --kbd-text-color: #fff;
+  --topbar-text-color: #fff;
+  --post-list-text-color: #fff;
+  --btn-patinator-text-color: #fff;
+  --link-color: #fff;
+  --link-underline-color: rgb(255 255 255 / 55%);
+  --bs-body-color: #fff;
+  --bs-body-bg: var(--bg-glass);
+  --bs-secondary-bg: var(--bg-glass);
+  --bs-border-color: var(--border-glass);
+  --bs-border-color-translucent: var(--border-glass);
+  --bs-secondary-color: #fff;
+  --bs-emphasis-color: #fff;
+  --bs-heading-color: #fff;
+  --bs-link-color: #fff;
+  --bs-link-color-rgb: 255, 255, 255;
+  --bs-link-hover-color: #fff;
+  --bs-link-hover-color-rgb: 255, 255, 255;
+}
+
+body.post-bg::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: var(--post-bg-overlay, rgba(0, 0, 0, 0.45));
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+body.post-bg #main-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+body.post-bg #panel-wrapper {
+  .toc-border-cover {
+    background: transparent;
+  }
+
+  #toc-wrapper::before,
+  #toc-wrapper::after {
+    background: transparent;
+  }
+}
+
 %-btn-post-nav {
   width: 50%;
   position: relative;

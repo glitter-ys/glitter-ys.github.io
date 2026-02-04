@@ -16,7 +16,17 @@ layout: compress
 <html lang="{{ page.lang | default: site.alt_lang | default: site.lang }}" {{ prefer_mode }}>
   {% include head.html lang=lang %}
 
-  <body>
+  {%- if page.bg_image -%}
+    {%- assign bg_src = page.bg_image.path | default: page.bg_image -%}
+    {%- assign bg_overlay = page.bg_overlay -%}
+    {%- unless bg_src contains ':' -%}
+      {%- capture bg_src -%}
+        {%- include media-url.html src=bg_src subpath=page.media_subpath -%}
+      {%- endcapture -%}
+    {%- endunless -%}
+  {%- endif -%}
+
+  <body{% if page.bg_image %} class="post-bg" style="--post-bg-image: url('{{ bg_src }}');{% if bg_overlay %} --post-bg-overlay: {{ bg_overlay }};{% endif %}"{% endif %}>
     {% include sidebar.html lang=lang %}
 
     <div id="main-wrapper" class="d-flex justify-content-center">
