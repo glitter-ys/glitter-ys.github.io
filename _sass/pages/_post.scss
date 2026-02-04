@@ -526,24 +526,31 @@ h4 {
   .qrcode-title {
     font-size: 0.875rem;
     margin-bottom: 0.5rem;
-    color: var(--text-color);
+    color: var(--heading-color); /* Use a high-contrast color */
+    font-weight: 600;
     line-height: 1.2;
     word-wrap: break-word; 
+    display: block !important; /* Force display */
   }
 
   .qrcode-download {
-    display: inline-block;
+    display: inline-block !important; /* Force display */
     padding: 0.25rem 0.5rem;
     font-size: 0.8rem;
+    font: inherit;
+    background-color: transparent;
     color: var(--link-color);
     border: 1px solid var(--link-color);
     border-radius: 0.25rem;
     text-decoration: none;
+    cursor: pointer;
+    appearance: none;
     transition: all 0.2s ease-in-out;
 
     &:hover {
       background-color: var(--link-color);
       color: #fff;
+      text-decoration: none;
     }
   }
 }

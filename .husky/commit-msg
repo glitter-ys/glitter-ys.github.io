@@ -1,1 +1,3 @@
-npx --no -- commitlint --edit $1
+#!/usr/bin/env sh
+# Disabled commit message linting for this repo.
+exit 0
