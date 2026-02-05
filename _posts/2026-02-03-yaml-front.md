@@ -6,7 +6,7 @@ categories: [技术]
 tags: [YAML]
 layout: post
 keywords: [YAML, blog]
-bg_image: /assets/img/camera.png
+bg_image: /assets/img/camera.PNG
 ---
 ### 一句话理解
 > YAML Front Matter = 写在文件开头的“配置说明书”
